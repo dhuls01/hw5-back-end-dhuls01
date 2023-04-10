@@ -17,14 +17,14 @@ const Header = ()=> {
      
         return (
             <div className='Header'>
-                <h4 className='logo'> Customer Management System</h4>
+                <h4 style={{color: "#89023e"}} className='logo'> Customer Management System</h4>
                 <div className='header header-right '>
                 
                     <Link to="/">
-                    <p className={`${activatet==="Register" ? "ative": ""}`} onClick={()=>setactivet("Home")}>Home</p>
+                    <p className={`${activatet==="Register" ? "ative": ""}`} style={{color: "#89023e"}} onClick={()=>setactivet("Home")}>Home</p>
                     </Link>
-                    <Link to="/register">
-                        <p className={`${activatet==="Register" ? "ative": ""}`} onClick={()=>setactivet("Register")}>Add customer</p>
+                    <Link to="/register" >
+                        <p style={{color: "#89023e"}} className={`${activatet==="Register" ? "ative": ""}`} onClick={()=>setactivet("Register")}>Add customer</p>
                     </Link>
 
                 </div>

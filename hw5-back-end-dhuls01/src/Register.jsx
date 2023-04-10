@@ -58,7 +58,7 @@ const Register=()=>{
    const getSingecustomer = async(id)=>{
         const response = await axios.get(`http://localhost:5000/singleuser/${id}`);
         if (response.status===200) {
-            setState(...response.data)
+            setState(response.data[0])
         }
     
 }
@@ -70,27 +70,26 @@ const Register=()=>{
    };
 return (
     <div className="Register">
-        <div className="container" style={{marginTop: "100px"}}>
-        <h2>REGISTER NEW CUSTOMER</h2>
+        <div  style={{margin: "8rem 0 0 15rem"}}>
+        <h2 style={{color:"#89023e"}}>REGISTER NEW CUSTOMER</h2>
         
-        <form  onSubmit={handleSubmit}>
-            <div className='inputdiv'>
+        <form  onSubmit={handleSubmit} style={{backgroundColor: "#ffe5ec"}}>
+            <div className='inputdiv' style={{ marginLeft: "1rem"}}>
             <label>First Name:</label>
-            <input type="text" placeholder='Enter your first Name' id="fname" name="fname" required onChange={handleInputChange} value={fname}/></div>
-            <div className='inputdiv'>
-            <label>second  Name:</label>
-            <input type="text" placeholder='Enter your Second Name' id="sname" name="sname" required onChange={handleInputChange} value={sname}/></div>
-            <div className='inputdiv'>
+            <input style={{marginLeft: "2rem"}} type="text" placeholder='Enter your first Name' id="fname" name="fname" required onChange={handleInputChange} value={fname}/>
+            <label style={{ marginLeft: "0.2rem"}}>second  Name:</label>
+            <input type="text" style={{ marginRight: "0.2rem"}} placeholder='Enter your Second Name' id="sname" name="sname" required onChange={handleInputChange} value={sname}/></div>
+            <div className='inputdiv' style={{ marginLeft: "1rem"}}>
             <label>Phone number:</label>
-            <input type="text" placeholder='Enter your Phone number' id="phonenumber" name="phonenumber" required onChange={handleInputChange} value={phonenumber}/></div>
+            <input type="text" style={{paddingRight: "24.9rem", marginRight: "0.2rem"}} placeholder='Enter your Phone number' id="phonenumber" name="phonenumber" required onChange={handleInputChange} value={phonenumber}/></div>
             
-            <div className='inputdiv'><label>Email:</label>
-            <input type="text" placeholder='Enter your Email' name="email" id="email" required onChange={handleInputChange} value={email}/></div>
-            <div className='inputdiv'><label>Country:</label>
-            <input type="text" placeholder='Enter your Country' name="country" id="country" required onChange={handleInputChange} value={country}/></div>
-            <div className='inputdiv'><label>City:</label>
-            <input type="text" placeholder='Enter your City' name="city" id="city" required onChange={handleInputChange} value={city}/></div>
-             <input type="submit" value={id ? "update" : "Register"}/>
+            <div className='inputdiv' style={{ marginLeft: "1rem"}}><label>Email:</label>
+            <input type="text" style={{paddingRight: "25rem", marginLeft: "4.4rem",marginRight: "0.2rem"}} placeholder='Enter your Email' name="email" id="email" required onChange={handleInputChange} value={email}/></div>
+            <div className='inputdiv' style={{ marginLeft: "1rem"}}><label>Country:</label>
+            <input type="text" style={{paddingRight: "25rem", marginLeft: "3.1rem", marginRight: "0.2rem"}} placeholder='Enter your Country' name="country" id="country" required onChange={handleInputChange} value={country}/></div>
+            <div className='inputdiv' style={{ marginLeft: "1rem"}}><label>City:</label>
+            <input type="text" style={{paddingRight: "25rem", marginLeft: "5rem", marginRight: "0.2rem"}} placeholder='Enter your City' name="city" id="city" required onChange={handleInputChange} value={city}/></div>
+             <input type="submit" style={{paddingRight: "43.8rem",marginRight: "0.2rem", backgroundColor: "#89023e",marginLeft: "1rem", color: "#f4f3ee"}} value={id ? "update" : "Register"}/>
              
         </form>
         </div>
